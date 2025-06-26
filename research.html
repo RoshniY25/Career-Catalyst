@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career in Research - Career Catalyst</title>
+  <link rel="stylesheet" href="research.css">
+</head>
+<body>
+    <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="researchquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>🔬 Career in Scientific Research</h1>
+
+    <p>Research careers are ideal for curious minds passionate about discovery, innovation, and solving real-world problems. Whether in labs, universities, or tech companies — research drives the future.</p>
+
+    <h2>🧠 Fields of Research</h2>
+    <ul>
+      <li>Physics, Chemistry, and Mathematics</li>
+      <li>Biological & Life Sciences (Biotech, Microbiology, Genetics)</li>
+      <li>Environmental & Climate Science</li>
+      <li>Artificial Intelligence & Data Science</li>
+      <li>Medical & Clinical Research</li>
+      <li>Agricultural & Food Science</li>
+    </ul>
+
+    <h2>📚 Courses After 12th</h2>
+    <ul>
+      <li>B.Sc. in Physics, Chemistry, Biology, Mathematics</li>
+      <li>B.Sc. (Hons) + M.Sc. in Research streams</li>
+      <li>Integrated M.Sc. (IISER, NISER, CUET)</li>
+      <li>B.Stat / B.Math (ISI, IITs)</li>
+      <li>Dual Degree Programs (BS-MS)</li>
+    </ul>
+
+    <h2>📝 Entrance Exams</h2>
+    <ul>
+      <li><strong>IISER Aptitude Test (IAT)</strong></li>
+      <li><strong>NEST</strong> – National Entrance Screening Test</li>
+      <li><strong>CUET-UG</strong> – Central Universities Entrance Test</li>
+      <li><strong>KVPY (Discontinued but replaced by IAT/NEST)</strong></li>
+      <li><strong>ISI Admission Test</strong> – For B.Stat/B.Math</li>
+    </ul>
+
+    <h2>🏫 Top Research Institutes in India</h2>
+    <ul>
+      <li>IISc Bangalore</li>
+      <li>IISERs (Pune, Mohali, Bhopal, Kolkata, Thiruvananthapuram)</li>
+      <li>NISER Bhubaneswar</li>
+      <li>TIFR – Tata Institute of Fundamental Research</li>
+      <li>ISI Kolkata – Indian Statistical Institute</li>
+    </ul>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Analytical and logical thinking</li>
+      <li>Curiosity and critical observation</li>
+      <li>Mathematical and scientific aptitude</li>
+      <li>Attention to detail</li>
+      <li>Good writing & documentation skills</li>
+    </ul>
+<h2>🏫 Find Top Research Colleges By State</h2>
+
+<select id="stateSelector" onchange="showResearchColleges()" class="dropdown">
+  <option value="">Select a State</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Tamil Nadu">Tamil Nadu</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Delhi">Delhi</option>
+  <option value="West Bengal">West Bengal</option>
+  <option value="Uttar Pradesh">Uttar Pradesh</option>
+  <option value="Gujarat">Gujarat</option>
+  <option value="Rajasthan">Rajasthan</option>
+  <option value="Andhra Pradesh">Andhra Pradesh</option>
+  <option value="Telangana">Telangana</option>
+</select>
+
+<div id="collegeList" class="college-box">please select a state for view top research colleges*</div>
+
+   
+
+    <div id="research-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Research as a career, try our suggestion tool to see if you are more suited for Medical, Engineering, or other science fields.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://iiseradmission.in/" target="_blank">IISER Admissions Portal</a></li>
+      <li><a href="https://www.niser.ac.in/" target="_blank">NISER Official Website</a></li>
+      <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET-UG Portal</a></li>
+      <li><a href="https://www.isical.ac.in/" target="_blank">ISI Kolkata (Stat/Math)</a></li>
+      <li><a href="career-detail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="science.html" class="nav-button">🔙 Back to Science Stream</a>
+    </p>
+  </div>
+
+  <script>
+    function showResearchResult() {
+      const answers = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      answers.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === "Yes") {
+          score++;
+        }
+      });
+
+      const resultDiv = document.getElementById("research-quiz-result");
+
+      if (score === 4) {
+        resultDiv.textContent = "✅ Perfect Match! Research could be your ideal career.";
+      } else if (score >= 2) {
+        resultDiv.textContent = "🟡 You have some interest in research. Explore it further.";
+      } else {
+        resultDiv.textContent = "❌ Research might not be your primary interest.";
+      }
+    }
+  </script>
+  <script>
+const researchColleges = {
+  "Maharashtra": ["IISER Pune", "TIFR Mumbai", "ICT Mumbai"],
+  "Tamil Nadu": ["IIT Madras", "Anna University Research Department", "CLRI Chennai"],
+  "Karnataka": ["IISc Bangalore", "NCBS Bangalore", "Jawaharlal Nehru Centre for Advanced Scientific Research"],
+  "Delhi": ["IIT Delhi", "AIIMS Research Centre", "JNU School of Life Sciences"],
+  "West Bengal": ["ISI Kolkata", "University of Calcutta – Science Faculty", "Bose Institute"],
+  "Uttar Pradesh": ["IIT Kanpur", "Banaras Hindu University (BHU)", "AMU Aligarh"],
+  "Gujarat": ["IIT Gandhinagar", "NIPER Ahmedabad", "Gujarat University – Dept. of Sciences"],
+  "Rajasthan": ["BITS Pilani", "Central University of Rajasthan", "IISER Jaipur (Proposed)"],
+  "Andhra Pradesh": ["Andhra University – Research Wing", "GITAM Research School", "SVU Tirupati"],
+  "Telangana": ["IIIT Hyderabad", "Osmania University – Research Programs", "Hyderabad University (UoH)"]
+};
+
+function showResearchColleges() {
+  const state = document.getElementById("stateSelector").value;
+  const output = document.getElementById("collegeList");
+  output.innerHTML = "";
+
+  if (state && researchColleges[state]) {
+    const list = document.createElement("ul");
+    researchColleges[state].forEach(college => {
+      const li = document.createElement("li");
+      li.textContent = college;
+      list.appendChild(li);
+    });
+    output.appendChild(list);
+  } else {
+    output.innerHTML = "<p>Please select a state to view top research colleges.</p>";
+  }
+}
+</script>
+
+</body>
+</html>

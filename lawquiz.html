@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Law Career Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="lawquiz.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>⚖️ Law Career Suitability Quiz</h1>
+    <p>Answer the following questions to check if a legal career is right for you.</p>
+
+    <form id="lawQuiz">
+      <h3>1. Do you enjoy debating or defending opinions logically?</h3>
+      <label><input type="radio" name="q1" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q1" value="No" /> No</label>
+
+      <h3>2. Are you good at reading and understanding long texts?</h3>
+      <label><input type="radio" name="q2" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q2" value="No" /> No</label>
+
+      <h3>3. Do you have an interest in justice, law, or public affairs?</h3>
+      <label><input type="radio" name="q3" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q3" value="No" /> No</label>
+
+      <h3>4. Do you remain calm and composed during arguments?</h3>
+      <label><input type="radio" name="q4" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q4" value="No" /> No</label>
+
+      <button type="button" class="submit-button" onclick="checkLawQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+
+    <p style="margin-top: 30px;">
+      <a href="lawyer.html" class="nav-button">🔙 Back to Law Career</a>
+    </p>
+  </div>
+
+  <script>
+    function checkLawQuiz() {
+      const answers = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+      answers.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === "Yes") {
+          score++;
+        }
+      });
+
+      const resultBox = document.getElementById("result");
+      if (score === 4) {
+        resultBox.textContent = "✅ You seem to have a strong inclination towards a career in Law!";
+      } else if (score >= 2) {
+        resultBox.textContent = "🟡 You show some potential for Law. Consider exploring it further.";
+      } else {
+        resultBox.textContent = "❌ Law might not be the best fit for your personality and interests.";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pharmacist Career - Career Catalyst</title>
+  <link rel="stylesheet" href="pharma.css">
+</head>
+<body>
+    <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="pharmaquiz.html">Quiz</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>💊 Career as a Pharmacist</h1>
+
+    <p>
+      A Pharmacist is a healthcare professional who is an expert in medicines and their usage. Pharmacists ensure the safe distribution of medicines, advise on their proper use, and play an essential role in patient care and the healthcare system.
+    </p>
+
+    <h2>🧪 Career Opportunities</h2>
+    <ul>
+      <li>Community Pharmacist (Retail Stores)</li>
+      <li>Hospital Pharmacist</li>
+      <li>Pharmaceutical Research Scientist</li>
+      <li>Drug Inspector</li>
+      <li>Clinical Pharmacist</li>
+      <li>Regulatory Affairs Officer</li>
+      <li>Production & Quality Control Officer</li>
+      <li>Medical Sales Representative</li>
+    </ul>
+
+    <h2>📚 Courses After 12th</h2>
+    <ul>
+      <li><strong>B.Pharm (Bachelor of Pharmacy):</strong> 4 years</li>
+      <li><strong>D.Pharm (Diploma in Pharmacy):</strong> 2 years</li>
+      <li><strong>Pharm.D (Doctor of Pharmacy):</strong> 6 years (integrated)</li>
+      <li><strong>M.Pharm (Postgraduate):</strong> 2 years (after B.Pharm)</li>
+    </ul>
+
+    <h2>📝 Entrance Exams</h2>
+    <ul>
+      <li><strong>NEET-UG:</strong> Some universities accept NEET scores</li>
+      <li><strong>WBJEE / MHT-CET / KCET / OJEE:</strong> State-level pharmacy entrance exams</li>
+      <li><strong>GPAT:</strong> For admission into M.Pharm (postgraduate)</li>
+    </ul>
+
+    <h2>🏫 Top Pharmacy Colleges in India</h2>
+    <ul>
+      <li>National Institute of Pharmaceutical Education and Research (NIPER)</li>
+      <li>Jamia Hamdard University, Delhi</li>
+      <li>Manipal College of Pharmaceutical Sciences</li>
+      <li>Institute of Chemical Technology (ICT), Mumbai</li>
+      <li>JSS College of Pharmacy, Ooty & Mysuru</li>
+    </ul>
+    <h2>🏫 Find Top Colleges By State</h2>
+
+<select id="stateSelector" onchange="showColleges()" class="dropdown">
+  <option value="">Select a State</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Tamil Nadu">Tamil Nadu</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Delhi">Delhi</option>
+  <option value="West Bengal">West Bengal</option>
+  <option value="Uttar Pradesh">Uttar Pradesh</option>
+  <option value="Gujarat">Gujarat</option>
+  <option value="Rajasthan">Rajasthan</option>
+  <option value="Andhra Pradesh">Andhra Pradesh</option>
+  <option value="Telangana">Telangana</option>
+</select>
+
+<div id="collegeList" class="college-box"> please select a state to view colleges*</div>
+
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Strong knowledge of chemistry and biology</li>
+      <li>Attention to detail</li>
+      <li>Ethical and responsible behavior</li>
+      <li>Communication skills</li>
+      <li>Patience and customer service</li>
+    </ul>
+<h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Research as a career, try our suggestion tool to see if you are more suited for Medical, Engineering, or other science fields.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://www.pci.nic.in/" target="_blank">Pharmacy Council of India (PCI)</a></li>
+      <li><a href="https://gpat.nta.nic.in/" target="_blank">GPAT Official Website</a></li>
+      <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main for Pharmacy Colleges (some states)</a></li>
+      <li><a href="career-detail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="science.html" class="nav-button">🔙 Back to Biology Stream</a>
+    </p>
+  </div>
+  <script>
+const collegeData = {
+  "Maharashtra": ["IIT Bombay", "ICT Mumbai", "BJ Medical College", "DY Patil College"],
+  "Tamil Nadu": ["IIT Madras", "SRM University", "Madras Medical College"],
+  "Karnataka": ["IISc Bangalore", "BMC Bangalore", "St. John's Medical College"],
+  "Delhi": ["AIIMS Delhi", "DTU", "IIIT Delhi"],
+  "West Bengal": ["Jadavpur University", "Medical College Kolkata", "NRS Medical College"],
+  "Uttar Pradesh": ["KGMU Lucknow", "MMMUT", "Amity University Noida"],
+  "Gujarat": ["IIT Gandhinagar", "Nirma University", "BJ Medical Ahmedabad"],
+  "Rajasthan": ["SMS Medical Jaipur", "JECRC University", "BITS Pilani"],
+  "Andhra Pradesh": ["Andhra University", "GITAM Visakhapatnam", "SV Medical College"],
+  "Telangana": ["Osmania Medical College", "IIIT Hyderabad", "NIT Warangal"]
+};
+
+function showColleges() {
+  const state = document.getElementById("stateSelector").value;
+  const output = document.getElementById("collegeList");
+  output.innerHTML = "";
+
+  if (state && collegeData[state]) {
+    const list = document.createElement("ul");
+    collegeData[state].forEach(college => {
+      const li = document.createElement("li");
+      li.textContent = college;
+      list.appendChild(li);
+    });
+    output.appendChild(list);
+  } else {
+    output.innerHTML = "<p>Please select a state to view colleges.</p>";
+  }
+}
+</script>
+
+</body>
+</html>

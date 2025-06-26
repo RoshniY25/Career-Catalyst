@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commerce Stream Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="commercequiz.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>💼 Commerce Stream Quiz</h1>
+    <p>This quiz will help identify your interest in Commerce careers like CA, Business Analyst, Finance, and more.</p>
+
+    <form id="commerceQuizForm">
+      <h3>1. Do you enjoy working with numbers and data?</h3>
+      <label><input type="radio" name="q1" value="Yes">Yes</label>
+      <label><input type="radio" name="q1" value="No">No</label>
+
+      <h3>2. Are you interested in business operations, trade, or accounting?</h3>
+      <label><input type="radio" name="q2" value="Yes">Yes</label>
+      <label><input type="radio" name="q2" value="No">No</label>
+
+      <h3>3. Do you enjoy planning budgets or managing expenses?</h3>
+      <label><input type="radio" name="q3" value="Yes">Yes</label>
+      <label><input type="radio" name="q3" value="No">No</label>
+
+      <h3>4. Would you like to work in finance, banking, or auditing?</h3>
+      <label><input type="radio" name="q4" value="Yes">Yes</label>
+      <label><input type="radio" name="q4" value="No">No</label>
+
+      <button type="button" onclick="evaluateCommerceQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="quizResult" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <p style="margin-top: 30px;">
+      <a href="commerce.html" class="nav-button">🔙 Back to Commerce Stream</a>
+    </p>
+  </div>
+
+  <script>
+    function evaluateCommerceQuiz() {
+      const answers = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      answers.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === "Yes") {
+          score++;
+        }
+      });
+
+      const result = document.getElementById("quizResult");
+
+      if (score === 4) {
+        result.textContent = "✅ Excellent! You are well-suited for a Commerce career path.";
+      } else if (score >= 2) {
+        result.textContent = "🟡 Moderate fit. You can explore commerce-related careers further.";
+      } else {
+        result.textContent = "❌ Commerce might not be your primary interest.";
+      }
+    }
+  </script>
+</body>
+</html>

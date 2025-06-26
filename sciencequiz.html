@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Science Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="sciencequiz.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="science.html">Science</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>🧪 Science Stream Quiz</h2>
+    <p>Answer the following to see if the science stream fits you:</p>
+
+    <form id="scienceQuiz">
+      <p><strong>1. Do you enjoy solving logical or mathematical problems?</strong></p>
+      <label><input type="radio" name="q1" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q1" value="No" /> No</label>
+
+      <p><strong>2. Are you interested in how nature and the universe work?</strong></p>
+      <label><input type="radio" name="q2" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q2" value="No" /> No</label>
+
+      <p><strong>3. Do you enjoy conducting experiments or exploring scientific topics?</strong></p>
+      <label><input type="radio" name="q3" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q3" value="No" /> No</label>
+
+      <p><strong>4. Are you curious about technology, medicine, or engineering?</strong></p>
+      <label><input type="radio" name="q4" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q4" value="No" /> No</label>
+
+      <br><br>
+      <button type="button" class="nav-button" onclick="evaluateScienceQuiz()">Submit</button>
+    </form>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div id="quizResult" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <canvas id="resultChart" style="max-width: 400px; margin: 30px auto; display: none;"></canvas>
+
+    <p style="margin-top: 30px;">
+      <a href="science.html" class="nav-button">🔙 Back to Science Stream</a>
+    </p>
+  </div>
+
+  <script>
+    function evaluateScienceQuiz() {
+      const answers = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      answers.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === "Yes") {
+          score++;
+        }
+      });
+
+      const resultDiv = document.getElementById("quizResult");
+
+      if (score === 4) {
+        resultDiv.textContent = "✅ Excellent! Science suits your interests well.";
+      } else if (score >= 2) {
+        resultDiv.textContent = "🟡 Moderate Fit. Explore science careers more.";
+      } else {
+        resultDiv.textContent = "❌ Science may not be your strongest interest.";
+      }
+
+      // Show Chart
+      const ctx = document.getElementById('resultChart').getContext('2d');
+      document.getElementById('resultChart').style.display = 'block';
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Your Score', 'Max Score'],
+          datasets: [{
+            label: 'Quiz Result',
+            data: [score, 4],
+            backgroundColor: ['#0ea5e9', '#94a3b8']
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 4
+            }
+          }
+        }
+      });
+    }
+
+    // Progress Bar Script
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        const total = 4;
+        let answered = 0;
+        for (let i = 1; i <= total; i++) {
+          if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+        }
+        document.getElementById("progressBar").style.width = (answered / total * 100) + "%";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biology Stream - Career Catalyst</title>
+  <link rel="stylesheet" href="bio.css">
+</head>
+<body>
+     <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="bioquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>🧬 Biology (PCB) Stream</h1>
+
+    <p>
+      The Biology stream is ideal for students interested in life sciences, medicine, and healthcare. It opens up career paths in medical, research, pharma, biotechnology, and many more.
+    </p>
+
+    <h2>🎯 Top Career Options</h2>
+    <ul>
+      <li>Doctor (MBBS, BDS, Ayurveda, Homeopathy)</li>
+      <li>Veterinarian (B.VSc)</li>
+      <li>Pharmacist (B.Pharm)</li>
+      <li>Microbiologist, Biotechnologist</li>
+      <li>Forensic Scientist</li>
+      <li>Botanist / Zoologist</li>
+      <li>Psychologist / Clinical Researcher</li>
+      <li>Healthcare Management / Nursing</li>
+    </ul>
+
+    <h2>📚 Popular Courses After 12th (PCB)</h2>
+    <ul>
+      <li>MBBS - Bachelor of Medicine and Surgery</li>
+      <li>BDS - Dental Surgery</li>
+      <li>BAMS - Ayurvedic Medicine</li>
+      <li>BHMS - Homeopathic Medicine</li>
+      <li>BPT - Physiotherapy</li>
+      <li>B.Sc in Biology, Microbiology, Genetics, Biotechnology</li>
+      <li>BNYS - Naturopathy and Yogic Sciences</li>
+      <li>B.VSc - Veterinary Science</li>
+      <li>Nursing / Paramedical Courses</li>
+    </ul>
+    <h2>🏫 Find Top Biology Colleges By State</h2>
+
+<select id="stateSelector" onchange="showColleges()" class="dropdown">
+  <option value="">Select a State</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Tamil Nadu">Tamil Nadu</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Delhi">Delhi</option>
+  <option value="West Bengal">West Bengal</option>
+</select>
+
+<div id="collegeList" class="college-box">please select a state*</div>
+
+
+    <h2>📝 Major Entrance Exams</h2>
+    <ul>
+      <li><strong>NEET-UG:</strong> Mandatory for MBBS, BDS, BAMS, BHMS, Veterinary, Nursing, and Allied Health Sciences.</li>
+      <li><strong>AIIMS & JIPMER:</strong> Merged into NEET-UG (for top institutes).</li>
+      <li><strong>CUET (for B.Sc programs):</strong> Central University Entrance Test.</li>
+      <li><strong>ICAR AIEEA:</strong> For B.Sc Agriculture and Allied Sciences.</li>
+      <li><strong>IPU CET / CUCET / Other University Exams:</strong> For UG Biology-related programs.</li>
+    </ul>
+
+    <h2>🌍 State-wise Medical Entrance Exams (via NEET)</h2>
+    <p>Almost all states now use NEET for medical admissions, but counseling is state-managed:</p>
+
+    <div class="state-exams">
+      <h3>🔸 Maharashtra</h3>
+      <p>Admissions through NEET-UG via <strong>MHT-CET Medical Counseling</strong>.</p>
+
+      <h3>🔸 Tamil Nadu</h3>
+      <p>Medical seats are filled through NEET, managed by <strong>TN Health Department</strong>.</p>
+
+      <h3>🔸 Kerala</h3>
+      <p>Admission via NEET and <strong>KEAM counseling</strong> (for allied courses).</p>
+
+      <h3>🔸 Uttar Pradesh</h3>
+      <p>Medical counseling conducted by <strong>UPDGME</strong> after NEET.</p>
+
+      <h3>🔸 Karnataka</h3>
+      <p>State-level counseling handled by <strong>KEA</strong> after NEET results.</p>
+    </div>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Strong memory and attention to detail</li>
+      <li>Scientific curiosity</li>
+      <li>Communication & Empathy (for healthcare fields)</li>
+      <li>Analytical skills</li>
+      <li>Interest in research and experimentation</li>
+    </ul>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://neet.nta.nic.in/" target="_blank">NEET Official Website</a></li>
+      <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET UG Official Portal</a></li>
+      <li><a href="https://mcc.nic.in/" target="_blank">All India Counseling (MCC)</a></li>
+      <li><a href="career-detail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+    <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Research as a career, try our suggestion tool to see if you are more suited for Medical, Engineering, or other science fields.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <p style="margin-top: 30px;">
+      <a href="science.html" class="nav-button">🔙 Back to Science Stream</a>
+    </p>
+  </div>
+  <script>
+const collegeData = {
+  "Maharashtra": [
+    "Grant Medical College, Mumbai",
+    "B.J. Government Medical College, Pune",
+    "DY Patil Medical College, Navi Mumbai"
+  ],
+  "Tamil Nadu": [
+    "Madras Medical College, Chennai",
+    "Stanley Medical College, Chennai",
+    "SRM Medical College, Kattankulathur"
+  ],
+  "Karnataka": [
+    "Bangalore Medical College",
+    "St. John’s Medical College",
+    "Manipal Academy of Higher Education"
+  ],
+  "Delhi": [
+    "AIIMS Delhi",
+    "Maulana Azad Medical College",
+    "Lady Hardinge Medical College"
+  ],
+  "West Bengal": [
+    "Medical College Kolkata",
+    "NRS Medical College",
+    "RG Kar Medical College"
+  ]
+};
+
+function showColleges() {
+  const state = document.getElementById("stateSelector").value;
+  const output = document.getElementById("collegeList");
+  output.innerHTML = "";
+
+  if (state && collegeData[state]) {
+    const list = document.createElement("ul");
+    collegeData[state].forEach(college => {
+      const li = document.createElement("li");
+      li.textContent = college;
+      list.appendChild(li);
+    });
+    output.appendChild(list);
+  } else {
+    output.innerHTML = "<p>Please select a state to view colleges.</p>";
+  }
+}
+</script>
+
+</body>
+</html>

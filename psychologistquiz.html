@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Psychologist Career Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="psychologistquiz.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🧠 Psychologist Career Suitability Quiz</h1>
+    <p>Answer the following questions to see if psychology could be the right career path for you.</p>
+
+    <form id="psychologistQuiz">
+      <h3>1. Do you enjoy helping others understand and cope with their emotions?</h3>
+      <label><input type="radio" name="q1" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q1" value="No" /> No</label>
+
+      <h3>2. Are you a good listener and empathetic towards others?</h3>
+      <label><input type="radio" name="q2" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q2" value="No" /> No</label>
+
+      <h3>3. Are you curious about human behavior and how the mind works?</h3>
+      <label><input type="radio" name="q3" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q3" value="No" /> No</label>
+
+      <h3>4. Can you maintain confidentiality and stay calm in emotional situations?</h3>
+      <label><input type="radio" name="q4" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q4" value="No" /> No</label>
+
+      <button type="button" class="submit-button" onclick="checkPsychologistQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+
+    <p style="margin-top: 30px;">
+      <a href="psychologist.html" class="nav-button">🔙 Back to Psychologist Career</a>
+    </p>
+  </div>
+
+  <script>
+    function checkPsychologistQuiz() {
+      const questions = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      questions.forEach(q => {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer && answer.value === "Yes") score++;
+      });
+
+      const resultBox = document.getElementById("result");
+      if (score === 4) {
+        resultBox.textContent = "✅ Excellent! You show strong potential for a career in psychology.";
+      } else if (score >= 2) {
+        resultBox.textContent = "🟡 You may have qualities of a psychologist. Explore further!";
+      } else {
+        resultBox.textContent = "❌ Psychology may not be your best fit. Explore other options.";
+      }
+    }
+  </script>
+</body>
+</html>

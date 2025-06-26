@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Career Quiz</title>
+<link rel="stylesheet" href="quiz.css?v=1.2">
+  <!-- <link rel="stylesheet" href="quiz.css"> -->
+</head>
+<body>
+   <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html" class="nav-button">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+     
+  <main class="quiz-container">
+    <h1>Career Interest Quiz</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Which subject do you enjoy the most?</p>
+        <label><input type="radio" name="q1" value="science"> Science</label>
+        <label><input type="radio" name="q1" value="commerce"> Math/Accounts</label>
+        <label><input type="radio" name="q1" value="arts"> History/Languages</label>
+      </div>
+
+      <div class="question">
+        <p>2. What kind of tasks excite you?</p>
+        <label><input type="radio" name="q2" value="science"> Experiments/Research</label>
+        <label><input type="radio" name="q2" value="commerce"> Managing money/business</label>
+        <label><input type="radio" name="q2" value="arts"> Writing/Performing arts</label>
+      </div>
+
+      <div class="question">
+        <p>3. What's your ideal career type?</p>
+        <label><input type="radio" name="q3" value="science"> Engineer/Doctor</label>
+        <label><input type="radio" name="q3" value="commerce"> Entrepreneur/Accountant</label>
+        <label><input type="radio" name="q3" value="arts"> Writer/Designer</label>
+      </div>
+<div class="question">
+  <p>4. How do you prefer to solve problems?</p>
+  <label><input type="radio" name="q4" value="science"> Using logic and scientific methods</label>
+  <label><input type="radio" name="q4" value="commerce"> Analyzing costs and business outcomes</label>
+  <label><input type="radio" name="q4" value="arts"> Creatively and intuitively</label>
+</div>
+
+<div class="question">
+  <p>5. What kind of activities do you enjoy in your free time?</p>
+  <label><input type="radio" name="q5" value="science"> Watching science/tech documentaries</label>
+  <label><input type="radio" name="q5" value="commerce"> Tracking investments or business news</label>
+  <label><input type="radio" name="q5" value="arts"> Reading novels or drawing/designing</label>
+</div>
+
+<div class="question">
+  <p>6. How do you envision your future workplace?</p>
+  <label><input type="radio" name="q6" value="science"> A hospital, lab, or tech company</label>
+  <label><input type="radio" name="q6" value="commerce"> A corporate office or startup</label>
+  <label><input type="radio" name="q6" value="arts"> A studio, media house, or classroom</label>
+</div>
+
+      <button type="submit" class="btn">See My Result</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </main>
+<script src="quiz.js?v=1.2"></script>
+
+  <!-- <script src="quiz.js"></script> -->
+</body>
+</html>

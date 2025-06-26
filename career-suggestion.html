@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Suggestion Tool - Career Catalyst</title>
+  <link rel="stylesheet" href="career-suggestion.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Career Suggestion Tool</h1>
+    <p>Answer these questions to help us suggest the most suitable career stream for you: Engineering, Medical, Pharmacy, or Research.</p>
+
+    <form id="career-quiz">
+      <p><strong>1. What kind of problems do you enjoy solving the most?</strong><br>
+        <label><input type="radio" name="q1" value="Engineering"> Technical or logical problems</label><br>
+        <label><input type="radio" name="q1" value="Medical"> Human body or health-related issues</label><br>
+        <label><input type="radio" name="q1" value="Pharmacy"> Medicines and how they work</label><br>
+        <label><input type="radio" name="q1" value="Research"> Scientific questions or theories</label>
+      </p>
+
+      <p><strong>2. Which subject do you enjoy the most?</strong><br>
+        <label><input type="radio" name="q2" value="Engineering"> Math</label><br>
+        <label><input type="radio" name="q2" value="Medical"> Biology</label><br>
+        <label><input type="radio" name="q2" value="Pharmacy"> Chemistry</label><br>
+        <label><input type="radio" name="q2" value="Research"> Physics</label>
+      </p>
+
+      <p><strong>3. Which environment excites you more?</strong><br>
+        <label><input type="radio" name="q3" value="Engineering"> Tech companies and innovation labs</label><br>
+        <label><input type="radio" name="q3" value="Medical"> Hospitals and patient care</label><br>
+        <label><input type="radio" name="q3" value="Pharmacy"> Drug stores and pharma labs</label><br>
+        <label><input type="radio" name="q3" value="Research"> Universities and research institutes</label>
+      </p>
+
+      <p><strong>4. What's your career goal?</strong><br>
+        <label><input type="radio" name="q4" value="Engineering"> Build and innovate technologies</label><br>
+        <label><input type="radio" name="q4" value="Medical"> Treat and help people</label><br>
+        <label><input type="radio" name="q4" value="Pharmacy"> Dispense medicine and advise patients</label><br>
+        <label><input type="radio" name="q4" value="Research"> Discover something new</label>
+      </p>
+
+      <button type="button" onclick="suggestCareer()" class="nav-button">🎯 Suggest My Career</button>
+    </form>
+
+    <div id="career-result" style="margin-top: 30px; font-size: 18px; font-weight: bold;"></div>
+
+    <p style="margin-top: 40px;"><a href="science.html" class="nav-button">🔙 Back to Science Stream</a></p>
+ </div>
+
+  <script>
+    function suggestCareer() {
+      const questions = ["q1", "q2", "q3", "q4"];
+      const count = { "Engineering": 0, "Medical": 0, "Pharmacy": 0, "Research": 0 };
+
+      questions.forEach(q => {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer) count[answer.value]++;
+      });
+
+      let bestFit = null;
+      let max = 0;
+      for (const field in count) {
+        if (count[field] > max) {
+          bestFit = field;
+          max = count[field];
+        }
+      }
+
+      const result = document.getElementById("career-result");
+
+      if (!bestFit) {
+        result.textContent = "❗ Please answer all questions to get a suggestion.";
+        return;
+      }
+
+      const links = {
+        "Engineering": "eng.html",
+        "Medical": "bio.html",
+        "Pharmacy": "pharma.html",
+        "Research": "research.html"
+      };
+
+      result.innerHTML = `✅ You are best suited for a career in <strong>${bestFit}</strong>.<br><a href="${links[bestFit]}" class="nav-button">Explore ${bestFit} Careers</a>`;
+    }
+  </script>
+</body>
+</html>

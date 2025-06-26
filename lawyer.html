@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career in Law - Career Catalyst</title>
+  <link rel="stylesheet" href="lawyer.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="lawquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🏰 Career in Law</h1>
+
+    <p>Law is an excellent field for individuals passionate about justice, legal rights, and public service. A career in law offers diverse opportunities such as practicing law, corporate legal advising, judicial services, and civil services.</p>
+
+    <h2>📖 Courses After 12th</h2>
+    <ul>
+      <li>5-Year Integrated Law Programs (B.A. LL.B, B.Com LL.B, BBA LL.B)</li>
+      <li>3-Year LL.B (after graduation)</li>
+      <li>Diploma in Cyber Law, Labor Law, Intellectual Property Law</li>
+    </ul>
+
+    <h2>🗒️ Entrance Exams</h2>
+    <ul>
+      <li><strong>CLAT</strong> – Common Law Admission Test (National Law Universities)</li>
+      <li><strong>LSAT India</strong> – Law School Admission Test for private universities</li>
+      <li><strong>SLAT</strong> – Symbiosis Law Admission Test</li>
+      <li><strong>AILET</strong> – All India Law Entrance Test (NLU Delhi)</li>
+      <li><strong>MH CET Law</strong> – Maharashtra State Law Entrance</li>
+    </ul>
+
+    <h2>🏨 Career Options in Law</h2>
+    <ul>
+      <li>Litigation Lawyer</li>
+      <li>Corporate Lawyer</li>
+      <li>Judge (through Judicial Services Exam)</li>
+      <li>Legal Advisor (Private/NGO/Government)</li>
+      <li>Public Prosecutor</li>
+      <li>Civil Services (with legal background)</li>
+    </ul>
+
+    <h2>🏫 Top Law Colleges in India</h2>
+    <ul>
+      <li>NLSIU Bangalore</li>
+      <li>NLU Delhi</li>
+      <li>NALSAR Hyderabad</li>
+      <li>WBNUJS Kolkata</li>
+      <li>Symbiosis Law School (Pune)</li>
+      <li>Faculty of Law, DU</li>
+    </ul>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Strong communication & reasoning skills</li>
+      <li>Analytical thinking & critical interpretation</li>
+      <li>Good knowledge of current affairs</li>
+      <li>Ability to argue logically</li>
+      <li>Confidence and ethics</li>
+    </ul>
+
+    <h2>🌐 Explore Law Colleges by State</h2>
+    <select id="stateSelector" onchange="showLawColleges()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+    </select>
+
+    <div id="collegeList" class="college-box">Please select a state to view top law colleges.</div>
+
+    <h2>🎯 Need Help Deciding?</h2>
+    <p>If you're unsure about pursuing law, take our career quiz to find the best fit for you.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🔗 Useful Links</h2>
+    <ul>
+      <li><a href="https://consortiumofnlus.ac.in/" target="_blank">CLAT Consortium Website</a></li>
+      <li><a href="https://www.lsatindia.in/" target="_blank">LSAT India Official Site</a></li>
+      <li><a href="https://nludelhi.ac.in/" target="_blank">NLU Delhi</a></li>
+      <li><a href="artsdetail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="arts.html" class="nav-button">🔙 Back to Arts Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const lawColleges = {
+      "Delhi": ["NLU Delhi", "Faculty of Law, DU"],
+      "Maharashtra": ["GLC Mumbai", "ILS Pune"],
+      "Karnataka": ["NLSIU Bangalore", "Christ University"],
+      "West Bengal": ["WBNUJS Kolkata", "South Calcutta Law College"],
+      "Tamil Nadu": ["Dr. Ambedkar Govt. Law College", "Saveetha School of Law"]
+    };
+
+    function showLawColleges() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("collegeList");
+      output.innerHTML = "";
+
+      if (state && lawColleges[state]) {
+        const list = document.createElement("ul");
+        lawColleges[state].forEach(college => {
+          const li = document.createElement("li");
+          li.textContent = college;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view top law colleges.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

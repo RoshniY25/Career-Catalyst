@@ -1,0 +1,243 @@
+/* Base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff5ed;
+  color: #333;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: #e38b29;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* Stream Title Section */
+.stream-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.stream-title h2 {
+  font-size: 2rem;
+  color: #e38b29;
+  margin-bottom: 8px;
+    animation: fadeUp 1s ease-in-out;
+
+  
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.stream-title p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/* Card Section */
+.career-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  width: 270px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  color: #e38b29;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card span {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-right: 12px;
+}
+
+/* Footer */
+ footer {
+  margin-top:auto;
+  padding: 30px;
+  background-color: #e38b29;;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  bottom: 0px;
+}
+ 
+.footer-note {
+  text-align: center;
+  color: #272525;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+body {
+  background-image: url('commercebg2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.5; /* adjust for visibility */
+}
+
+/* Optional overlay to improve text readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3); /* adjust based on theme */
+  z-index: -1;
+}
+
+/* xyz */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('commercebg2.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: #333;
+}
+
+/* Overlay to darken image for better text readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6); /* light transparent overlay */
+  z-index: -1;
+}
+
+/* Optional: Enhance card contrast */
+.card {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: #e38b29;
+  font-weight: bold;
+}
+
+.card p,
+.card span {
+  color: #222;
+}
+card h3 a {
+  text-decoration:underline;
+  color: #e38b29;
+  transition: color 0.3s ease;
+}
+
+.card h3 a:hover {
+  color:#e38b29;
+}
+h3 a{
+  color: #e38b29;
+
+}

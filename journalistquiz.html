@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Journalism Career Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="journalistquiz.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>📰 Journalism Career Quiz</h1>
+    <p>Take this quick quiz to find out if journalism is the right path for you!</p>
+
+    <form id="journalismQuiz">
+      <h3>1. Are you passionate about uncovering the truth and sharing facts?</h3>
+      <label><input type="radio" name="q1" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q1" value="No" /> No</label>
+
+      <h3>2. Do you enjoy writing, storytelling, or public speaking?</h3>
+      <label><input type="radio" name="q2" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q2" value="No" /> No</label>
+
+      <h3>3. Are you curious and always asking questions?</h3>
+      <label><input type="radio" name="q3" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q3" value="No" /> No</label>
+
+      <h3>4. Can you work under pressure and meet tight deadlines?</h3>
+      <label><input type="radio" name="q4" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q4" value="No" /> No</label>
+
+      <button type="button" class="submit-button" onclick="checkJournalismQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+
+    <p style="margin-top: 30px;">
+      <a href="journalist.html" class="nav-button">🔙 Back to Journalism Career</a>
+    </p>
+  </div>
+
+  <script>
+    function checkJournalismQuiz() {
+      const questions = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      questions.forEach(q => {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer && answer.value === "Yes") score++;
+      });
+
+      const resultBox = document.getElementById("result");
+      if (score === 4) {
+        resultBox.textContent = "✅ You're highly suited for a career in journalism!";
+      } else if (score >= 2) {
+        resultBox.textContent = "🟡 You show potential. Explore journalism further.";
+      } else {
+        resultBox.textContent = "❌ Journalism may not be your ideal path.";
+      }
+    }
+  </script>
+</body>
+</html>

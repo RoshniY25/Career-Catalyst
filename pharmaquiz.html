@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pahrmaquiz.css">
+</head>
+<body>
+   <h2>🧪 Is Pharmacy Right for You? Take the Quiz!</h2>
+<form id="pharma-quiz">
+  <p><strong>1. Are you interested in how medicines work inside the human body?</strong><br>
+    <label><input type="radio" name="q1" value="Yes"> Yes</label>
+    <label><input type="radio" name="q1" value="No"> No</label>
+  </p>
+
+  <p><strong>2. Would you prefer working in a healthcare setting without doing surgeries or diagnosis?</strong><br>
+    <label><input type="radio" name="q2" value="Yes"> Yes</label>
+    <label><input type="radio" name="q2" value="No"> No</label>
+  </p>
+
+  <p><strong>3. Do you enjoy Chemistry and Biology in school?</strong><br>
+    <label><input type="radio" name="q3" value="Yes"> Yes</label>
+    <label><input type="radio" name="q3" value="No"> No</label>
+  </p>
+
+  <p><strong>4. Would you like a stable, respected healthcare career?</strong><br>
+    <label><input type="radio" name="q4" value="Yes"> Yes</label>
+    <label><input type="radio" name="q4" value="No"> No</label>
+  </p>
+
+  <button type="button" onclick="showPharmaResult()" class="nav-button">Check My Fit for Pharmacy</button>
+</form>
+
+<div id="pharma-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+<script>
+function showPharmaResult() {
+  const answers = ["q1", "q2", "q3", "q4"];
+  let score = 0;
+
+  answers.forEach(q => {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === "Yes") {
+      score++;
+    }
+  });
+
+  const resultDiv = document.getElementById("pharma-quiz-result");
+
+  if (score === 4) {
+    resultDiv.textContent = "✅ Excellent fit! A career in Pharmacy may be perfect for you.";
+  } else if (score >= 2) {
+    resultDiv.textContent = "🟡 You show some interest in Pharmacy. Explore further to decide.";
+  } else {
+    resultDiv.textContent = "❌ Pharmacy might not be your strongest interest. Consider other fields.";
+  }
+}
+</script>
+</body>
+</html>

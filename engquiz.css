@@ -1,0 +1,16 @@
+form#engg-quiz {
+    background-color: #eff6ff;
+    padding: 20px;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+form#engg-quiz p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form#engg-quiz label {
+    margin-right: 15px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career Catalyst</title>
+  <link rel="stylesheet" href="1.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="fade-in">CAREER CATALYST</h1>
+    <p class="tagline fade-in delay-1">Explore. Decide. Succeed.</p>
+    <p id="quote" class="fade-in delay-1">"Education is the passport to the future."</p>
+    
+
+ <a href="dashboard.html" class="btn fade-in delay-4">🎯welcome</a>
+  </div>
+
+  <footer class="fade-in delay-5">
+    <p>&copy; 2025 Career Catalyst | Made with ❤️ for students after 10th</p>
+  </footer>
+<video autoplay muted loop id="bg-video">
+  <source src="careervideo.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+
+<script>
+const quotes = [
+  "Explore careers that excite you.",
+  "Every great career starts with a single step.",
+  "Knowledge is your superpower.",
+  "Education is the passport to the future."
+];
+let i = 0;
+setInterval(() => {
+  document.getElementById("quote").textContent = quotes[i++ % quotes.length];
+}, 3000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career in Journalism - Career Catalyst</title>
+  <link rel="stylesheet" href="journalist.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="journalistquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>📰 Career in Journalism & Mass Communication</h1>
+
+    <p>Journalism is a dynamic career for those who are passionate about storytelling, truth-seeking, and influencing society through various media platforms like print, TV, and digital.</p>
+
+    <h2>🎓 Courses After 12th</h2>
+    <ul>
+      <li>Bachelor of Journalism (BJ)</li>
+      <li>Bachelor of Mass Communication (BMC)</li>
+      <li>B.A. in Journalism & Mass Media</li>
+      <li>Diploma in Journalism or Digital Media</li>
+      <li>Integrated B.A. + M.A. in Mass Communication</li>
+    </ul>
+
+    <h2>📝 Entrance Exams</h2>
+    <ul>
+      <li><strong>IIMC Entrance Exam</strong> – Indian Institute of Mass Communication</li>
+      <li><strong>CUET-UG</strong> – For central universities offering journalism courses</li>
+      <li><strong>JMI Entrance Test</strong> – Jamia Millia Islamia's Mass Comm programs</li>
+      <li><strong>SET</strong> – For Symbiosis Centre for Media & Communication</li>
+      <li><strong>XIC OET</strong> – Xavier Institute of Communications Online Test</li>
+    </ul>
+
+    <h2>🏫 Top Journalism Institutes in India</h2>
+    <ul>
+      <li>IIMC (Delhi & Regional Centres)</li>
+      <li>AJK Mass Communication Research Centre (JMI)</li>
+      <li>Symbiosis Institute of Media & Communication (Pune)</li>
+      <li>Asian College of Journalism (Chennai)</li>
+      <li>Delhi University – IP College for Women, LSR</li>
+      <li>Xavier Institute of Communications (Mumbai)</li>
+    </ul>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Excellent verbal and written communication</li>
+      <li>Strong research and investigative skills</li>
+      <li>Ethics and integrity</li>
+      <li>Critical thinking and objectivity</li>
+      <li>Basic knowledge of multimedia tools</li>
+    </ul>
+
+    <h2>📍 Find Top Journalism Colleges By State</h2>
+    <select id="stateSelector" onchange="showJournalismColleges()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+    </select>
+
+    <div id="collegeList" class="college-box">please select a state for view top journalism colleges*</div>
+
+    <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Journalism as a career, try our suggestion tool to see if it's the right fit for your interests and skills.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://iimc.nic.in/" target="_blank">IIMC Official Website</a></li>
+      <li><a href="https://xaviercomm.org/" target="_blank">Xavier Institute of Communications</a></li>
+      <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET UG Portal</a></li>
+      <li><a href="artsdetail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="arts.html" class="nav-button">🔙 Back to Arts Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const journalismColleges = {
+      "Delhi": ["IIMC New Delhi", "AJK MCRC (Jamia)", "Lady Shri Ram College"],
+      "Maharashtra": ["Xavier Institute of Communications", "Amity Mumbai", "Symbiosis Pune"],
+      "Tamil Nadu": ["Asian College of Journalism", "University of Madras", "Loyola College Chennai"],
+      "West Bengal": ["University of Calcutta", "Jadavpur University", "IIMC Dhenkanal (Nearby)"],
+      "Karnataka": ["Christ University", "St. Joseph’s College", "Manipal School of Communication"],
+      "Uttar Pradesh": ["Amity University Noida", "BHU Varanasi", "IMS Noida"]
+    };
+
+    function showJournalismColleges() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("collegeList");
+      output.innerHTML = "";
+
+      if (state && journalismColleges[state]) {
+        const list = document.createElement("ul");
+        journalismColleges[state].forEach(college => {
+          const li = document.createElement("li");
+          li.textContent = college;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view top journalism colleges.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

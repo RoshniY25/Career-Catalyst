@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(to right, #ecfdf5, #e0f2fe);
+    color: #333;
+    padding: 40px 20px;
+    line-height: 1.7;
+}
+.navbar {
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.detail-header {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+.detail-header h2 {
+  font-size: 2rem;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #1e40af;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #2563eb;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #0f172a;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}

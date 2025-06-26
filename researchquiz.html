@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>🧪 Is Research Right for You? Take the Quiz!</h2>
+<form id="research-quiz">
+  <p><strong>1. Do you enjoy asking deep questions and solving complex problems?</strong><br>
+    <label><input type="radio" name="q1" value="Yes"> Yes</label>
+    <label><input type="radio" name="q1" value="No"> No</label>
+  </p>
+
+  <p><strong>2. Would you enjoy working in a lab or academic setting?</strong><br>
+    <label><input type="radio" name="q2" value="Yes"> Yes</label>
+    <label><input type="radio" name="q2" value="No"> No</label>
+  </p>
+
+  <p><strong>3. Do you enjoy reading science articles, journals, or experimenting?</strong><br>
+    <label><input type="radio" name="q3" value="Yes"> Yes</label>
+    <label><input type="radio" name="q3" value="No"> No</label>
+  </p>
+
+  <p><strong>4. Are you comfortable spending years working toward a breakthrough?</strong><br>
+    <label><input type="radio" name="q4" value="Yes"> Yes</label>
+    <label><input type="radio" name="q4" value="No"> No</label>
+  </p>
+
+  <button type="button" onclick="showResearchResult()" class="nav-button">Check My Fit for Research</button>
+</form>
+
+<div id="research-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+<script>
+function showResearchResult() {
+  const questions = ["q1", "q2", "q3", "q4"];
+  let score = 0;
+
+  questions.forEach(q => {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === "Yes") {
+      score++;
+    }
+  });
+
+  const resultDiv = document.getElementById("research-quiz-result");
+
+  if (score === 4) {
+    resultDiv.textContent = "✅ Excellent fit! You have strong potential for a career in Research.";
+  } else if (score >= 2) {
+    resultDiv.textContent = "🟡 You show interest in Research. Explore it further to decide.";
+  } else {
+    resultDiv.textContent = "❌ Research might not be your ideal field. Consider other options.";
+  }
+}
+</script>
+
+</body>
+</html>

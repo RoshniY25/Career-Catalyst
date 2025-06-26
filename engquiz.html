@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="engquiz.css">
+</head>
+<body>
+    <h2>🧪 Take the Engineering Career Interest Quiz</h2>
+<form id="engg-quiz">
+  <p><strong>1. Do you enjoy writing code or solving algorithm problems?</strong><br>
+    <label><input type="radio" name="q1" value="Software"> Yes</label>
+    <label><input type="radio" name="q1" value="Core"> No</label>
+  </p>
+
+  <p><strong>2. Are you more interested in machines, electronics, or construction?</strong><br>
+    <label><input type="radio" name="q2" value="Core"> Yes</label>
+    <label><input type="radio" name="q2" value="Software"> No</label>
+  </p>
+
+  <p><strong>3. Do you love sketching, designing buildings, or being creative?</strong><br>
+    <label><input type="radio" name="q3" value="Design"> Yes</label>
+    <label><input type="radio" name="q3" value="Core"> No</label>
+  </p>
+
+  <p><strong>4. Would you rather build software products or physical devices?</strong><br>
+    <label><input type="radio" name="q4" value="Software"> Software</label>
+    <label><input type="radio" name="q4" value="Core"> Devices</label>
+  </p>
+
+  <button type="button" onclick="showEnggResult()" class="nav-button">Get My Suggested Career</button>
+</form>
+
+<div id="engg-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+<script>
+function showEnggResult() {
+    const answers = ["q1", "q2", "q3", "q4"];
+    const tally = {};
+
+    answers.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected) {
+            tally[selected.value] = (tally[selected.value] || 0) + 1;
+        }
+    });
+
+    let highest = null;
+    let max = 0;
+    for (const career in tally) {
+        if (tally[career] > max) {
+            highest = career;
+            max = tally[career];
+        }
+    }
+
+    const resultDiv = document.getElementById("engg-quiz-result");
+
+    if (highest === "Software") {
+        resultDiv.textContent = "✅ Suggested Career: Software Engineer, Web Developer, AI/ML Specialist";
+    } else if (highest === "Core") {
+        resultDiv.textContent = "✅ Suggested Career: Mechanical, Civil, Electrical, or Electronics Engineer";
+    } else if (highest === "Design") {
+        resultDiv.textContent = "✅ Suggested Career: Architect, Product Designer, UI/UX Engineer";
+    } else {
+        resultDiv.textContent = "❗ Please answer all questions to get a result.";
+    }
+}
+</script>
+</body>
+</html>

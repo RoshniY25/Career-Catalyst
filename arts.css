@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef6fb;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #b83280;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 60s ease;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+  color: #b83280;
+}
+
+.stream-title {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+.stream-title h2 {
+  font-size: 2rem;
+  color: #b83280;
+  margin-bottom: 10px;
+   animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.career-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 60px;
+}
+
+.card {
+  background-color: rgb(220, 213, 213);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 25px;
+  width: 280px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #b83280;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #b83280;
+}
+.card a{
+  color: #b83280;
+}
+.card span {
+  display: block;
+  font-size: 0.85rem;
+  color: #0e0e0e;
+}
+footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color:  #b83280;
+  text-align: center;
+  color: #f9fbff;
+  font-size: 14px;
+}
+media (max-width: 768px) {
+  .career-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav a {
+    display: inline-block;
+    margin: 5px 10px 0 0;
+  }
+}
+  body {
+  background: 
+    linear-gradient(rgba(118, 121, 129, 0.7), rgba(10, 15, 25, 0.7)),
+    url("artsbg.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  color: #f1f5f9;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* changed from flex-start */
+  align-items: center;
+  padding: 40px 20px;
+  /* min-height: calc(100vh - 100px); ensures it fills visible screen */
+}

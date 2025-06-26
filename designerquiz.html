@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Designer Career Quiz - Career Catalyst</title>
+  <link rel="stylesheet" href="designerquiz.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🎨 Graphic Designer Career Quiz</h1>
+    <p>Not sure if graphic designing is for you? Take this quiz to find out!</p>
+
+    <form id="designQuiz">
+      <h3>1. Do you enjoy creating visuals, drawings, or digital art?</h3>
+      <label><input type="radio" name="q1" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q1" value="No" /> No</label>
+
+      <h3>2. Are you familiar with tools like Canva, Photoshop, or Illustrator?</h3>
+      <label><input type="radio" name="q2" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q2" value="No" /> No</label>
+
+      <h3>3. Do you notice design details in posters, logos, or websites?</h3>
+      <label><input type="radio" name="q3" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q3" value="No" /> No</label>
+
+      <h3>4. Are you comfortable working on creative projects with deadlines?</h3>
+      <label><input type="radio" name="q4" value="Yes" /> Yes</label>
+      <label><input type="radio" name="q4" value="No" /> No</label>
+
+      <button type="button" class="submit-button" onclick="checkDesignQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+
+    <p style="margin-top: 30px;">
+      <a href="designer.html" class="nav-button">🔙 Back to Graphic Designer Career</a>
+    </p>
+  </div>
+
+  <script>
+    function checkDesignQuiz() {
+      const questions = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      questions.forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === "Yes") {
+          score++;
+        }
+      });
+
+      const resultBox = document.getElementById("result");
+      if (score === 4) {
+        resultBox.textContent = "✅ You're a great fit for a career in graphic design!";
+      } else if (score >= 2) {
+        resultBox.textContent = "🟡 You have some potential! Consider exploring graphic design further.";
+      } else {
+        resultBox.textContent = "❌ Graphic design might not be your ideal path.";
+      }
+    }
+  </script>
+</body>
+</html>

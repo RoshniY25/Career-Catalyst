@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engineering Stream - Career Catalyst</title>
+  <link rel="stylesheet" href="eng.css">
+</head>
+<body>
+      <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="engquiz.html">Quiz</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>⚙️ Engineering (PCM) Stream</h1>
+
+    <p>
+      The Engineering stream is one of the most popular choices for students after Class 10 and 12. It offers careers in design, development, construction, computer science, electronics, and much more.
+    </p>
+
+    <h2>🎯 Top Career Options</h2>
+    <ul>
+      <li>Software Engineer / Web Developer</li>
+      <li>Mechanical / Civil / Electrical Engineer</li>
+      <li>Aeronautical / Automobile Engineer</li>
+      <li>Data Scientist / AI-ML Engineer</li>
+      <li>Robotics / Embedded Systems Engineer</li>
+      <li>Telecom / Electronics Engineer</li>
+    </ul>
+
+    <h2>📚 Popular Courses After 12th (PCM)</h2>
+    <ul>
+      <li>B.E. / B.Tech (All Engineering Branches)</li>
+      <li>B.Arch (Architecture)</li>
+      <li>B.Sc (Computer Science, Electronics, Physics, Math)</li>
+      <li>BCA (Computer Applications)</li>
+      <li>Diploma in Engineering (Polytechnic)</li>
+    </ul>
+
+    <h2>📝 Major Entrance Exams</h2>
+    <ul>
+      <li><strong>JEE Main:</strong> For NITs, IIITs, and other engineering colleges</li>
+      <li><strong>JEE Advanced:</strong> For IITs</li>
+      <li><strong>BITSAT:</strong> BITS Pilani & campuses</li>
+      <li><strong>VITEEE, SRMJEEE, COMEDK:</strong> University-level entrance exams</li>
+      <li><strong>CUET-UG:</strong> For admission to central universities</li>
+    </ul>
+
+    <h2>🌍 State-wise Engineering Exams</h2>
+
+    <div class="state-exams">
+      <h3>🔹 Maharashtra</h3>
+      <p><strong>MHT-CET:</strong> For Engineering & Pharmacy courses.</p>
+
+      <h3>🔹 West Bengal</h3>
+      <p><strong>WBJEE:</strong> State entrance for Engineering.</p>
+
+      <h3>🔹 Karnataka</h3>
+      <p><strong>KCET:</strong> Karnataka Common Entrance Test.</p>
+
+      <h3>🔹 Andhra Pradesh / Telangana</h3>
+      <p><strong>AP EAMCET / TS EAMCET:</strong> Engineering, Agriculture & Medical.</p>
+
+      <h3>🔹 Uttar Pradesh</h3>
+      <p><strong>UPCET:</strong> (Formerly UPSEE).</p>
+    </div>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Logical thinking and problem solving</li>
+      <li>Strong Math and Physics fundamentals</li>
+      <li>Creativity and design skills</li>
+      <li>Analytical mindset</li>
+      <li>Programming or technical interest (for CS-related branches)</li>
+    </ul>
+<h2>🔗 Helpful Links</h2>
+<ul>
+  <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main Official Website</a></li>
+  <li><a href="https://jeeadv.ac.in/" target="_blank">JEE Advanced Official Website</a></li>
+  <li><a href="https://www.bitsadmission.com/" target="_blank">BITSAT Official Portal</a></li>
+  <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET UG Official Portal</a></li>
+  <li><a href="career-detail.html" class="nav-button">View All Entrance Exams</a></li>
+</ul>
+ <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Research as a career, try our suggestion tool to see if you are more suited for Medical, Engineering, or other science fields.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🏫 Find Top Engineering Colleges By State</h2>
+    <select id="stateSelector" onchange="showColleges()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Gujarat">Gujarat</option>
+    </select>
+    <div id="collegeList" class="college-box">Please select a state to view colleges*</div>
+
+    <p style="margin-top: 30px;">
+      <a href="science.html" class="nav-button">🔙 Back to Science Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const collegeData = {
+      "Maharashtra": ["IIT Bombay", "COEP Pune", "VJTI Mumbai"],
+      "Tamil Nadu": ["IIT Madras", "Anna University", "SRM Institute"],
+      "Karnataka": ["IISc Bangalore", "RVCE", "PES University"],
+      "Delhi": ["DTU", "NSUT", "IIIT Delhi"],
+      "Gujarat": ["IIT Gandhinagar", "Nirma University", "DAIICT"]
+    };
+
+    function showColleges() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("collegeList");
+      output.innerHTML = "";
+
+      if (state && collegeData[state]) {
+        const list = document.createElement("ul");
+        collegeData[state].forEach(college => {
+          const li = document.createElement("li");
+          li.textContent = college;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view colleges.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

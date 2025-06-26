@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career in Graphic Designing - Career Catalyst</title>
+  <link rel="stylesheet" href="designer.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="designerquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🎨 Career in Graphic Designing</h1>
+
+    <p>Graphic Designing blends creativity, communication, and technology to convey ideas through visual elements. From branding to digital content, it's a key part of media, marketing, and entertainment industries.</p>
+
+    <h2>🎓 Courses After 12th</h2>
+    <ul>
+      <li>Bachelor of Design (B.Des) – Communication / Graphic Design</li>
+      <li>B.Sc in Multimedia / Animation / Visual Communication</li>
+      <li>Diploma in Graphic Design / Animation / Web Design</li>
+      <li>Certificate courses in Adobe Creative Suite, UI/UX</li>
+      <li>Advanced Diploma in 2D/3D Animation and Motion Graphics</li>
+    </ul>
+
+    <h2>📝 Entrance Exams</h2>
+    <ul>
+      <li><strong>NID DAT</strong> – National Institute of Design Admission Test</li>
+      <li><strong>UCEED</strong> – Undergraduate Common Entrance Exam for Design (IITs)</li>
+      <li><strong>PEARL / SID / MIT DAT</strong> – Private university design entrance tests</li>
+      <li><strong>CUET-UG</strong> – For some B.Voc and B.A. Design programs</li>
+    </ul>
+
+    <h2>🏫 Top Institutes for Graphic Design in India</h2>
+    <ul>
+      <li>National Institute of Design (NID)</li>
+      <li>MIT Institute of Design, Pune</li>
+      <li>Symbiosis Institute of Design</li>
+      <li>National Institute of Fashion Technology (NIFT)</li>
+      <li>Pearl Academy</li>
+      <li>Srishti Institute of Art, Design & Technology</li>
+    </ul>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Creative thinking and originality</li>
+      <li>Understanding of color theory, typography, and layout</li>
+      <li>Proficiency in tools like Photoshop, Illustrator, Figma</li>
+      <li>Visual storytelling and branding</li>
+      <li>UI/UX and digital interface design basics</li>
+    </ul>
+
+    <h2>📍 Find Top Design Colleges By State</h2>
+    <select id="stateSelector" onchange="showDesignColleges()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+    </select>
+
+    <div id="collegeList" class="college-box">please select a state for view top design colleges*</div>
+
+    <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about a career in design, try our suggestion tool to explore related fields like Animation, Fine Arts, or Multimedia Production.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://www.nid.edu/" target="_blank">NID Official Website</a></li>
+      <li><a href="https://www.uceed.iitb.ac.in/" target="_blank">UCEED by IIT Bombay</a></li>
+      <li><a href="https://www.pearlacademy.com/" target="_blank">Pearl Academy</a></li>
+      <li><a href="artsdetail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="arts.html" class="nav-button">🔙 Back to Arts Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const designColleges = {
+      "Delhi": ["NIFT Delhi", "Pearl Academy", "Jamia Millia (AJK MCRC)"],
+      "Maharashtra": ["MIT Institute of Design", "Symbiosis Institute of Design", "Raffles Design Mumbai"],
+      "Karnataka": ["Srishti Institute", "IIFA Multimedia", "Mount Carmel College"],
+      "West Bengal": ["Rabindra Bharati University", "St. Xavier’s Kolkata", "NSHM Knowledge Campus"],
+      "Rajasthan": ["Arch College of Design", "Amity Jaipur", "JECRC University"],
+      "Tamil Nadu": ["NIFT Chennai", "Loyola College (Visual Comm.)", "Vels University"]
+    };
+
+    function showDesignColleges() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("collegeList");
+      output.innerHTML = "";
+
+      if (state && designColleges[state]) {
+        const list = document.createElement("ul");
+        designColleges[state].forEach(college => {
+          const li = document.createElement("li");
+          li.textContent = college;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view top design colleges.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

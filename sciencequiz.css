@@ -1,0 +1,139 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #e2ecf6);
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2563eb;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.container h2 {
+  color: #1e40af;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Quiz Questions */
+form p {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #0f172a;
+}
+
+label {
+  display: block;
+  margin: 8px 0 0 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Button */
+.nav-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Progress bar */
+.progress-container {
+  background-color: #e2e8f0;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #10b981;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Chart */
+canvas {
+  display: block;
+  margin: 30px auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  form p {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+}

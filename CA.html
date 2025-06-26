@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chartered Accountant - Career Catalyst</title>
+  <link rel="stylesheet" href="CA.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="commercequiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>💼 Chartered Accountant (CA) Career Path</h1>
+    <p>
+      Chartered Accountancy is one of the most prestigious and rewarding careers in the commerce stream.
+      CAs are responsible for managing financial audits, tax planning, and financial consultancy for individuals and organizations.
+    </p>
+
+    <h2>🎓 Eligibility & Educational Path</h2>
+    <ul>
+      <li>After Class 12 (Commerce): Register for CA Foundation Course</li>
+      <li>Clear CA Foundation, then Intermediate, followed by Articleship (3 years)</li>
+      <li>Clear CA Final Exam to become a Chartered Accountant</li>
+    </ul>
+
+    <h2>🏦 Top Institutions & Coaching Centers</h2>
+    <select id="stateSelector" onchange="showCenters()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Karnataka">Karnataka</option>
+    </select>
+
+    <div id="centerList" class="college-box">Please select a state*</div>
+
+    <h2>🖊️ Major Entrance & Certification Exams</h2>
+    <ul>
+      <li><strong>CA Foundation:</strong> Entry-level exam after 12th</li>
+      <li><strong>CA Intermediate:</strong> Mid-level exam after CA Foundation</li>
+      <li><strong>CA Final:</strong> Final exam after 3 years of practical training</li>
+    </ul>
+
+    <h2>🌍 Career Opportunities</h2>
+    <ul>
+      <li>Audit Firms</li>
+      <li>Tax Consultant</li>
+      <li>Finance Manager</li>
+      <li>Corporate Sector (MNCs, Banks)</li>
+      <li>Independent Practice</li>
+    </ul>
+
+    <h2>📈 Skills Required</h2>
+    <ul>
+      <li>Strong Analytical & Problem-Solving Skills</li>
+      <li>Sound Knowledge of Accounting Principles</li>
+      <li>Ethical Judgement & Professionalism</li>
+      <li>Attention to Detail</li>
+      <li>Good Communication & Business Acumen</li>
+    </ul>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://www.icai.org/" target="_blank">ICAI Official Website</a></li>
+      <li><a href="https://icaiexam.icai.org/" target="_blank">CA Exams Portal</a></li>
+      <li><a href="exam-detail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="commerce.html" class="nav-button">💙 Back to Commerce Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const coachingCenters = {
+      "Delhi": [
+        "Aldine CA Coaching, Laxmi Nagar",
+        "VSI CA Institute",
+        "ETEN CA by Pearson"
+      ],
+      "Maharashtra": [
+        "JK Shah Classes, Mumbai",
+        "Yashas Academy, Pune",
+        "Agrawal Classes, Nagpur"
+      ],
+      "Tamil Nadu": [
+        "Prime Academy, Chennai",
+        "AKS Academy, Coimbatore",
+        "Smart Learning CA Institute"
+      ],
+      "Karnataka": [
+        "CAPS Coaching, Bengaluru",
+        "Chanakya Academy",
+        "Elite CA Coaching"
+      ]
+    };
+
+    function showCenters() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("centerList");
+      output.innerHTML = "";
+
+      if (state && coachingCenters[state]) {
+        const list = document.createElement("ul");
+        coachingCenters[state].forEach(center => {
+          const li = document.createElement("li");
+          li.textContent = center;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view coaching centers.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

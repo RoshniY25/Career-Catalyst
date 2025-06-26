@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career in Psychology - Career Catalyst</title>
+  <link rel="stylesheet" href="psychologist.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>CAREER CATALYST</h1>
+    <nav>
+      <a href="dashboard.html">Home</a>
+      <a href="psychologistquiz.html">Quiz</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🧠 Career in Psychology</h1>
+
+    <p>Psychology is the scientific study of mind and behavior. As a psychologist, you help people understand and cope with mental health challenges, behavior issues, or emotional well-being.</p>
+
+    <h2>🎓 Courses After 12th</h2>
+    <ul>
+      <li>B.A. / B.Sc. in Psychology</li>
+      <li>B.A. in Applied Psychology</li>
+      <li>B.A. + M.A. Integrated Psychology Programs</li>
+      <li>Diploma in Counseling / Clinical Psychology</li>
+      <li>Certification in Child Psychology, Behavioral Science</li>
+    </ul>
+
+    <h2>📝 Entrance Exams</h2>
+    <ul>
+      <li><strong>CUET-UG</strong> – Central Universities for Psychology programs</li>
+      <li><strong>DUET (Now via CUET)</strong> – Delhi University entrance</li>
+      <li><strong>IPU CET</strong> – Guru Gobind Singh IP University</li>
+      <li><strong>JMI Entrance Test</strong> – Jamia Millia Islamia</li>
+      <li><strong>Private University Exams</strong> – Amity, Christ, Ashoka, etc.</li>
+    </ul>
+
+    <h2>🏫 Top Psychology Institutes in India</h2>
+    <ul>
+      <li>University of Delhi (LSR, Jesus & Mary, Daulat Ram)</li>
+      <li>Christ University, Bangalore</li>
+      <li>Tata Institute of Social Sciences (TISS), Mumbai</li>
+      <li>Jamia Millia Islamia, Delhi</li>
+      <li>Amity University</li>
+      <li>Fergusson College, Pune</li>
+    </ul>
+
+    <h2>🛠️ Skills Required</h2>
+    <ul>
+      <li>Empathy and compassion</li>
+      <li>Active listening and patience</li>
+      <li>Strong observational and analytical skills</li>
+      <li>Ethical decision-making</li>
+      <li>Communication and interpersonal abilities</li>
+    </ul>
+
+    <h2>📍 Find Top Psychology Colleges By State</h2>
+    <select id="stateSelector" onchange="showPsychColleges()" class="dropdown">
+      <option value="">Select a State</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+    </select>
+
+    <div id="collegeList" class="college-box">please select a state for view top psychology colleges*</div>
+
+    <h2>🎯 Still Confused? Let Us Help You Choose</h2>
+    <p>If you're unsure about Psychology as a career, try our suggestion tool to explore related fields like Social Work, Teaching, or Medical Counseling.</p>
+    <a href="career-suggestion.html" class="nav-button">🔍 Suggest Me a Career</a>
+
+    <h2>🔗 Helpful Links</h2>
+    <ul>
+      <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET-UG Portal</a></li>
+      <li><a href="https://www.tiss.edu/" target="_blank">TISS Mumbai</a></li>
+      <li><a href="https://www.du.ac.in/" target="_blank">Delhi University</a></li>
+      <li><a href="artsdetail.html" class="nav-button">View All Entrance Exams</a></li>
+    </ul>
+
+    <p style="margin-top: 30px;">
+      <a href="arts.html" class="nav-button">🔙 Back to Arts Stream</a>
+    </p>
+  </div>
+
+  <script>
+    const psychColleges = {
+      "Delhi": ["Lady Shri Ram College", "Jamia Millia Islamia", "Jesus and Mary College"],
+      "Maharashtra": ["TISS Mumbai", "Fergusson College Pune", "Mumbai University"],
+      "Karnataka": ["Christ University", "Mount Carmel College", "Bangalore University"],
+      "West Bengal": ["University of Calcutta", "Presidency University", "Jadavpur University"],
+      "Uttar Pradesh": ["Amity University Noida", "Banaras Hindu University (BHU)", "Lucknow University"],
+      "Tamil Nadu": ["Madras University", "Loyola College Chennai", "Christ University Chennai"]
+    };
+
+    function showPsychColleges() {
+      const state = document.getElementById("stateSelector").value;
+      const output = document.getElementById("collegeList");
+      output.innerHTML = "";
+
+      if (state && psychColleges[state]) {
+        const list = document.createElement("ul");
+        psychColleges[state].forEach(college => {
+          const li = document.createElement("li");
+          li.textContent = college;
+          list.appendChild(li);
+        });
+        output.appendChild(list);
+      } else {
+        output.innerHTML = "<p>Please select a state to view top psychology colleges.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

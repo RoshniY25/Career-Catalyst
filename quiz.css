@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+}
+
+.quiz-container {
+  background-color: white;
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 25px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+}
+
+.btn {
+  background-color: #0078d4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #444;
+}
+
+.navbar {
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+}
+
+.navbar h1 {
+    color: white;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('quizdashboard.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  position: relative;
+}
+
+/* Optional overlay for better readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* adjust opacity */
+  z-index: -1;
+}
